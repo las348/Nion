@@ -1,9 +1,25 @@
+body {
+    background-color: linen;
+}
+
 #main {
     margin-top: 100px;
-    
+    border: solid;
 }
 
 img {
-    margin: 20px;
-    width: 200px;
+    margin: 20px 10px;
+    width: 250px;
+}
+
+ul {
+    text-align: left;
+}
+
+/* #question-result {
+    text-emphasis: bold;
+} */
+
+#home {
+    color: rgb(233, 232, 232);
 }

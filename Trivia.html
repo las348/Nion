@@ -7,24 +7,32 @@
     <!---  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="style.css" />
     <title>The Office Trivia- Quiz</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <form class="form-inline">
+          <img class="navbar-brand" src="Assets/newlogo.png">
+          <a class="nav-link" href="index.html" id="home">Home</a>
+        </form>
+      </nav>
+      
     <center>
-        <div class="card mb-3" style="max-width: 540px;" id="main">
-            <div class="row no-gutters">
+        <div class="card mb-3" style="max-width: 700px;" id="main">
+            <div class="row no-gutters" id="box">
                 <div class="col-md-4">
-                    <img src="Assets/Pam1.jfif" class="card-img" alt="Pam">
+                    <img src="" id="img" class="card-img" alt="">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
+                    <div class="card-body" id="container">
 
-                        <div id="timer"></div>
+                        <div id="timer" class="btn btn-outline-danger"></div>
                         <div class="card-title" id="question"></div>
-                        <ul id="choices"></ul>
-                        <div id="result"></div>
+                        <ul id="option-list"></ul>
+                        <div id="question-result"></div>
                        
                     </div>
                 </div>
@@ -32,7 +40,7 @@
         </div>
     </center>
     
-    <script src="script.js"></script>
+    <script src="script3.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
