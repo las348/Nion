@@ -68,6 +68,8 @@ var correctCount = 0;
 var time = 90;
 var intervalId;
 
+$(document).ready(function() {
+
 
 function updateTime() {
     time--;
@@ -140,6 +142,7 @@ function renderQuestion() {
         questionListItem.textContent = choices[i];
         optionListEl.append(questionListItem);
     }
+
     /////Image/////
     var i = Math.floor(Math.random() * 6);
     $("#img").attr("src", imgArray[i]);
@@ -148,8 +151,6 @@ function renderQuestion() {
 
 function nextQuestion() {
     questionIndex++;
-
-
 
     if (questionIndex === questions.length) {
         time = 0;
@@ -175,14 +176,8 @@ function checkAnswer(event) {
     }
     setTimeout(nextQuestion, 2000);
 }
-
+});
 renderQuestion();
 optionListEl.addEventListener("click", checkAnswer);
 
 
-
-//////////Styling///////////////////
-// $("#main").width(800);
-// $("#box").width(700);
-// $("#img").width(300);
-// $("#container").height(250).width(600);
