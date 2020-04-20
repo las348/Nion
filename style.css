@@ -7,9 +7,13 @@ body {
     border: solid;
 }
 
+#box {
+    width: 700px;
+}
+
 img {
     margin: 20px 10px;
-    width: 250px;
+    width: 400px;
 }
 
 ul {
