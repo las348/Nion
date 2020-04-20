@@ -54,7 +54,7 @@ $(document).ready(function () {
     ];
 
     //Images//
-    var imgArray = ["Assets/cast1.jpg", "Assets/cast2.jpg", "Assets/MainImage.jpg", "Assets/cast3.png", "Assets/cast4.jpg", "Assets/cast6.jpg", "Assets/cast7.png"];
+    var imgArray = ["Assets/cast1.jpg", "Assets/cast2.jpg", "Assets/MainImage.jpg", "Assets/cast3.png", "Assets/cast4.jpg", "Assets/cast6.jpg", "Assets/cast7.png", "Assets/cast8.jpg"];
     console.log(imgArray.length);
     //////////
 
@@ -63,11 +63,10 @@ $(document).ready(function () {
     var optionListEl = document.querySelector("#option-list");
     var questionResultEl = document.querySelector("#question-result");
     var timerEl = document.querySelector("#timer");
-    var imgEl = document.getElementById("#img");
 
     var questionIndex = 0;
     var correctCount = 0;
-    var time = 90;
+    var time = 5;
     var intervalId;
 
 
@@ -84,6 +83,7 @@ $(document).ready(function () {
     function endQuiz() {
         clearInterval(intervalId);
 
+        //hides the div tag
         $("div").hide(1000);
 
         var scoreEl = document.createElement("p");
@@ -108,21 +108,40 @@ $(document).ready(function () {
 
         localStorage.setItem("scores", JSON.stringify(high_scores));
 
+        //clears score data
+        // localStorage.clear(high_scores)
+
         high_scores.sort(function (a, b) {
             return b.score - a.score;
         });
 
-        var contentUL = document.createElement("ul")
+        var contentP = document.createElement("p")
+        contentP.style.fontWeight = 'bold';
+        contentP.style.padding = '20px';
+        contentP.style.backgroundColor = 'whitesmoke';
+        contentP.style.fontSize = '30px';
+        contentP.textContent = 'High Scores';
 
-            for (var i = 0; i < high_scores.length; i++) {
+        document.body.appendChild(contentP);
+
+        var contentOL = document.createElement("ol")
+        contentOL.style.fontWeight = 'bold';
+        contentOL.style.padding = '20px';
+        contentOL.style.textAlign = 'center';
+
+
+        for (var i = 0; i < high_scores.length; i++) {
             var contentLI = document.createElement("li")
+            contentLI.style.backgroundColor = 'whitesmoke';
+            contentLI.style.width = '300px';
+            contentLI.style.border = 'double';
 
-            contentLI.textContent =
-                "Name: " + high_scores[i].name + " Score: " + high_scores[i].score;
+            var nameScore = "Name: " + high_scores[i].name + " Score: " + high_scores[i].score;
 
-            contentUL.appendChild(contentLI);
+            contentLI.textContent = nameScore
+            contentOL.appendChild(contentLI);
         }
-        document.body.appendChild(contentUL);
+        document.body.appendChild(contentOL);
     }
 
 
@@ -141,7 +160,7 @@ $(document).ready(function () {
         questionResultEl.innerHTML = "";
 
         var choices = questions[questionIndex].choices;
-        console.log(choices); //1st Q mult choice
+        console.log(choices); //Q mult choice
         var choicesLen = choices.length;
         console.log(choicesLen); //3
 
@@ -152,7 +171,7 @@ $(document).ready(function () {
         }
 
         /////Image/////
-        var i = Math.floor(Math.random() * 6);
+        var i = Math.floor(Math.random() * 7);
         $("#img").attr("src", imgArray[i]);
     };
 
