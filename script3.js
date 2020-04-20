@@ -109,7 +109,7 @@ $(document).ready(function () {
         localStorage.setItem("scores", JSON.stringify(high_scores));
 
         //clears score data
-         localStorage.clear(high_scores)
+        // localStorage.clear(high_scores)
 
         high_scores.sort(function (a, b) {
             return b.score - a.score;
