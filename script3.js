@@ -109,22 +109,26 @@ $(document).ready(function () {
         localStorage.setItem("scores", JSON.stringify(high_scores));
 
         //clears score data
-        // localStorage.clear(high_scores)
+         localStorage.clear(high_scores)
 
         high_scores.sort(function (a, b) {
             return b.score - a.score;
         });
+       
+       var contentP = document.createElement("p");
+       contentP.style.fontWeight = 'bold';
+       contentP.style.padding = '20px';
+       contentP.style.backgroundColor = 'whitesmoke';
+       contentP.style.fontSize = '30px';
+       contentP.textContent = 'High Scores';
+       document.body.appendChild(contentP);
 
-        var contentP = document.createElement("p")
-        contentP.style.fontWeight = 'bold';
-        contentP.style.padding = '20px';
-        contentP.style.backgroundColor = 'whitesmoke';
-        contentP.style.fontSize = '30px';
-        contentP.textContent = 'High Scores';
+       var imgCast = document.createElement("img");
+       imgCast.src = "Assets/cast4.jpg"; 
+            document.body.appendChild(imgCast); 
+              
 
-        document.body.appendChild(contentP);
-
-        var contentOL = document.createElement("ol")
+        var contentOL = document.createElement("ol");
         contentOL.style.fontWeight = 'bold';
         contentOL.style.padding = '20px';
         contentOL.style.textAlign = 'center';
@@ -136,7 +140,7 @@ $(document).ready(function () {
             contentLI.style.width = '300px';
             contentLI.style.border = 'double';
 
-            var nameScore = "Name: " + high_scores[i].name + " Score: " + high_scores[i].score;
+            var nameScore = "Name: " + high_scores[i].name + ", Score: " + high_scores[i].score;
 
             contentLI.textContent = nameScore
             contentOL.appendChild(contentLI);
