@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     var questionIndex = 0;
     var correctCount = 0;
-    var time = 5;
+    var time = 90;
     var intervalId;
 
 
