@@ -170,9 +170,11 @@ $(document).ready(function () {
 
         for (var i = 0; i < choicesLen; i++) {
             var questionListItem = document.createElement("li");
+            questionListItem.classList.add("hvr-radial-out");
             questionListItem.textContent = choices[i];
             optionListEl.append(questionListItem);
         }
+
 
         /////Image/////
         var i = Math.floor(Math.random() * 7);
